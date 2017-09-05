@@ -18,7 +18,7 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
-            yuguy
+            yuguy sdfsdf
         }
 
         #region Код, автоматически созданный конструктором форм Windows
