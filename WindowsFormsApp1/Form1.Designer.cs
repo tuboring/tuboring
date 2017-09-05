@@ -18,7 +18,7 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
-            yuguy
+            yuguyfuyf lesha ertert
         }
 
         #region Код, автоматически созданный конструктором форм Windows
