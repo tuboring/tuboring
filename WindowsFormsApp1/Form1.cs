@@ -19,7 +19,8 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Form4 autorisation = new Form4();
+            autorisation.ShowDialog();
         }
 
         private void label1_Click(object sender, EventArgs e)

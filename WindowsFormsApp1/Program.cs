@@ -8,6 +8,7 @@ namespace WindowsFormsApp1
 {
     static class Program
     {
+        public static string nameUser = "";
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>

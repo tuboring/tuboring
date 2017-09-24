@@ -94,6 +94,7 @@
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(408, 121);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(255, 20);
             this.passwordTextBox.TabIndex = 13;
             // 
@@ -116,6 +117,7 @@
             this.button1.TabIndex = 15;
             this.button1.Text = "Отмена";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -135,6 +137,7 @@
             this.button3.TabIndex = 17;
             this.button3.Text = "Регистрация";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // dateTimePicker1
             // 
