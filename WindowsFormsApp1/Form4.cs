@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form4 : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Алина\Source\Repos\tuboring\WindowsFormsApp1\DatabaseVolleyBall");
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Алина\Source\Repos\tuboring\WindowsFormsApp1\DatabaseVolleyBall.mdf;Integrated Security=True");
 
         public Form4()
         {
@@ -27,32 +27,38 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Неправильный логин или пароль. Попробуйте заново.");
             else
             {
-                string query = "SELECT * FROM Role where RoleId='" + roleId.ToString() + "' ;";
+                string query = "SELECT * FROM [Role] where [RoleId]='" + roleId.ToString() + "' ;";
                 SqlCommand cmd = new SqlCommand(query, con);
                 con.Open();
                 SqlDataReader myReader = cmd.ExecuteReader();
-                string roleName = myReader.GetValue(1).ToString();
+                myReader.Read();
+                string roleName = myReader.GetString(1).ToString();
                 con.Close();
-
+                MessageBox.Show("Добро пожаловать " + Program.nameUser);
                 OpenFormUser(roleName);
             }
         }
 
         string CheckLoginAndPassword(string login, string password)
         {
-            string query = "SELECT * FROM User where Email='" + loginTextBox.Text + "' ;";
+            string query = "SELECT * FROM [User] where [Email]='" + loginTextBox.Text + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
             SqlDataReader myReader = cmd.ExecuteReader();
             if (myReader.HasRows == false)
+            {
+                con.Close();
                 return "";
-            string passwordTable = myReader.GetValue(1).ToString();
+            }
+            myReader.Read();
+            string passwordTable = myReader.GetString(1);
 
             if (passwordTable == password)
             {
-                Program.nameUser = myReader.GetValue(2).ToString() + " " + myReader.GetValue(3).ToString();
+                Program.nameUser = myReader.GetString(2).ToString() + " " + myReader.GetValue(3).ToString();
+                string roleid= myReader.GetString(4).ToString();
                 con.Close();
-                return myReader.GetValue(4).ToString();
+                return roleid;
             }
             else return "";
         }
@@ -67,7 +73,7 @@ namespace WindowsFormsApp1
             if(rName == "Runner")
                 form = new Form5();
 
-            form.Show();
+            form.ShowDialog();
             this.Close();
         }
 
