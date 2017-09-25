@@ -177,10 +177,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DatabaseVolleyBall.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DatabaseVolleyBall_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>DatabaseVolleyBall.mdf</DependentUpon>
     </Content>
     <None Include="Resources\vfv-process-new-03.jpg" />
