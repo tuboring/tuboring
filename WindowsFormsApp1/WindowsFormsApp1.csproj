@@ -60,97 +60,196 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="BuyTickets.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="BuyTickets.Designer.cs">
+      <DependentUpon>BuyTickets.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form10.cs">
+    <Compile Include="ConfirmRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form10.Designer.cs">
-      <DependentUpon>Form10.cs</DependentUpon>
+    <Compile Include="ConfirmRegistration.Designer.cs">
+      <DependentUpon>ConfirmRegistration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="ControlUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="ControlUsers.Designer.cs">
+      <DependentUpon>ControlUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="EditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="EditProfile.Designer.cs">
+      <DependentUpon>EditProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="Information.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="Information.Designer.cs">
+      <DependentUpon>Information.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form6.cs">
+    <Compile Include="MatchCheck.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form6.Designer.cs">
-      <DependentUpon>Form6.cs</DependentUpon>
+    <Compile Include="MatchCheck.Designer.cs">
+      <DependentUpon>MatchCheck.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form7.cs">
+    <Compile Include="DetailingInformation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form7.Designer.cs">
-      <DependentUpon>Form7.cs</DependentUpon>
+    <Compile Include="DetailingInformation.Designer.cs">
+      <DependentUpon>DetailingInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form8.cs">
+    <Compile Include="Authorization.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form8.Designer.cs">
-      <DependentUpon>Form8.cs</DependentUpon>
+    <Compile Include="Authorization.Designer.cs">
+      <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form9.cs">
+    <Compile Include="MyResults.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form9.Designer.cs">
-      <DependentUpon>Form9.cs</DependentUpon>
+    <Compile Include="MyResults.Designer.cs">
+      <DependentUpon>MyResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyTeam.Designer.cs">
+      <DependentUpon>MyTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationOnMatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrationOnMatch.Designer.cs">
+      <DependentUpon>RegistrationOnMatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sportsman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sportsman.Designer.cs">
+      <DependentUpon>Sportsman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Referee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Referee.Designer.cs">
+      <DependentUpon>Referee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TicketMatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketMatch.Designer.cs">
+      <DependentUpon>TicketMatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tickets.Designer.cs">
+      <DependentUpon>Tickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Сoach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Сoach.Designer.cs">
+      <DependentUpon>Сoach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fan.Designer.cs">
+      <DependentUpon>Fan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="BuyTickets.resx">
+      <DependentUpon>BuyTickets.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form10.resx">
-      <DependentUpon>Form10.cs</DependentUpon>
+    <EmbeddedResource Include="ConfirmRegistration.resx">
+      <DependentUpon>ConfirmRegistration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="ControlUsers.resx">
+      <DependentUpon>ControlUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="EditProfile.resx">
+      <DependentUpon>EditProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <EmbeddedResource Include="Information.resx">
+      <DependentUpon>Information.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form6.resx">
-      <DependentUpon>Form6.cs</DependentUpon>
+    <EmbeddedResource Include="MatchCheck.resx">
+      <DependentUpon>MatchCheck.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form7.resx">
-      <DependentUpon>Form7.cs</DependentUpon>
+    <EmbeddedResource Include="DetailingInformation.resx">
+      <DependentUpon>DetailingInformation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form8.resx">
-      <DependentUpon>Form8.cs</DependentUpon>
+    <EmbeddedResource Include="Authorization.resx">
+      <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form9.resx">
-      <DependentUpon>Form9.cs</DependentUpon>
+    <EmbeddedResource Include="MyResults.resx">
+      <DependentUpon>MyResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyTeam.resx">
+      <DependentUpon>MyTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrationOnMatch.resx">
+      <DependentUpon>RegistrationOnMatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sportsman.resx">
+      <DependentUpon>Sportsman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referee.resx">
+      <DependentUpon>Referee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketMatch.resx">
+      <DependentUpon>TicketMatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tickets.resx">
+      <DependentUpon>Tickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Сoach.resx">
+      <DependentUpon>Сoach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fan.resx">
+      <DependentUpon>Fan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -183,6 +282,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>DatabaseVolleyBall.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\5668_600.jpg" />
+    <None Include="Resources\show_image.jpg" />
     <None Include="Resources\vfv-process-new-03.jpg" />
     <None Include="Resources\csm_i_39_3f349e2a67.jpg" />
     <None Include="Resources\i.jpg" />

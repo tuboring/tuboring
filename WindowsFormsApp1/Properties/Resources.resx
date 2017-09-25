@@ -118,13 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="csm_i_39_3f349e2a67" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\csm_i_39_3f349e2a67.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="vfv-process-new-03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vfv-process-new-03.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="show_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\show_image.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="i" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\i.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="vfv-process-new-03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\vfv-process-new-03.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="csm_i_39_3f349e2a67" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\csm_i_39_3f349e2a67.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="5668_600" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5668_600.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

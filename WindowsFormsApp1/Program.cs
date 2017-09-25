@@ -9,10 +9,7 @@ namespace WindowsFormsApp1
 {
     static class Program
     {
-        public static string nameUser = "";
-        //Саша// public static SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\sasha\source\repos\tuboring\WindowsFormsApp1\DatabaseVolleyBall.mdf;Integrated Security=True");
-        //Леша //public static SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Alex-PC\source\repos\tuboring\WindowsFormsApp1\DatabaseVolleyBall.mdf;Integrated Security=True");
-
+        public static string nameUser = "";      
         public static SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DatabaseVolleyBall.mdf;Integrated Security = True");
 
         /// <summary>
@@ -23,7 +20,7 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Main());
         }
     }
 }
