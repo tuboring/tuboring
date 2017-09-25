@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
     static class Program
     {
         public static string nameUser = "";
+        public static SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Алина\Source\Repos\tuboring\WindowsFormsApp1\DatabaseVolleyBall.mdf;Integrated Security=True");
+
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>

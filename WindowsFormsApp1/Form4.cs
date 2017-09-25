@@ -13,8 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form4 : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Алина\Source\Repos\tuboring\WindowsFormsApp1\DatabaseVolleyBall.mdf;Integrated Security=True");
-
+        SqlConnection con = Program.con;
         public Form4()
         {
             InitializeComponent();
@@ -42,7 +41,7 @@ namespace WindowsFormsApp1
         string CheckLoginAndPassword(string login, string password)
         {
             string query = "SELECT * FROM [User] where [Email]='" + loginTextBox.Text + "'";
-            SqlCommand cmd = new SqlCommand(query, con);
+            SqlCommand cmd = new SqlCommand(query, Program.con);
             con.Open();
             SqlDataReader myReader = cmd.ExecuteReader();
             if (myReader.HasRows == false)
