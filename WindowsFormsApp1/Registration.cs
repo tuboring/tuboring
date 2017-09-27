@@ -47,5 +47,34 @@ namespace WindowsFormsApp1
         {
             this.Close();
         }
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Загрузить_Click(object sender, EventArgs e)
+        {
+            Bitmap image; //Bitmap для открываемого изображения
+
+            OpenFileDialog open_dialog = new OpenFileDialog(); //создание диалогового окна для выбора файла
+            open_dialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*"; //формат загружаемого файла
+            if (open_dialog.ShowDialog() == DialogResult.OK) //если в окне была нажата кнопка "ОК"
+            {
+                try
+                {
+                    image = new Bitmap(open_dialog.FileName);
+                    Фотография.Image = image;
+                    Фотография.Invalidate();
+                    Фотография.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                catch
+                {
+                    DialogResult rezult = MessageBox.Show("Невозможно открыть выбранный файл",
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

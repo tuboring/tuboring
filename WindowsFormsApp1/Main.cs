@@ -43,17 +43,24 @@ namespace WindowsFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            openAutorisation();
+            Fan fan = new Fan();
+            fan.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            
+            openAutorisation();
         }
         void openAutorisation()
         {
             Authorization autorisation = new Authorization();
             autorisation.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Information inf = new Information();
+            inf.ShowDialog();
         }
     }
 }

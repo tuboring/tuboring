@@ -44,14 +44,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.ЗагрузкаФото = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Фотография = new System.Windows.Forms.PictureBox();
+            this.Загрузить = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.Статус = new System.Windows.Forms.ComboBox();
             this.ДатаРождения = new System.Windows.Forms.DateTimePicker();
             this.Страна = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Фотография)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -199,23 +199,26 @@
             this.label11.TabIndex = 33;
             this.label11.Text = "Выберите файл";
             // 
-            // pictureBox1
+            // Фотография
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(497, 66);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(196, 175);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 35;
-            this.pictureBox1.TabStop = false;
+            this.Фотография.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Фотография.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Фотография.Location = new System.Drawing.Point(497, 66);
+            this.Фотография.Name = "Фотография";
+            this.Фотография.Size = new System.Drawing.Size(196, 175);
+            this.Фотография.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Фотография.TabIndex = 35;
+            this.Фотография.TabStop = false;
             // 
-            // button1
+            // Загрузить
             // 
-            this.button1.Location = new System.Drawing.Point(654, 311);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(32, 23);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Загрузить.Location = new System.Drawing.Point(654, 311);
+            this.Загрузить.Name = "Загрузить";
+            this.Загрузить.Size = new System.Drawing.Size(32, 23);
+            this.Загрузить.TabIndex = 36;
+            this.Загрузить.Text = "...";
+            this.Загрузить.UseVisualStyleBackColor = true;
+            this.Загрузить.Click += new System.EventHandler(this.Загрузить_Click);
             // 
             // button2
             // 
@@ -270,8 +273,8 @@
             this.Controls.Add(this.Статус);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Загрузить);
+            this.Controls.Add(this.Фотография);
             this.Controls.Add(this.ЗагрузкаФото);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -291,7 +294,7 @@
             this.Name = "Registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Volleyball championship 2018";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Фотография)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,8 +318,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox ЗагрузкаФото;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox Фотография;
+        private System.Windows.Forms.Button Загрузить;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox Статус;

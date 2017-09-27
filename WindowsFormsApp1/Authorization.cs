@@ -78,7 +78,9 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Registration reg = new Registration();
+            this.Close();
+            reg.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
