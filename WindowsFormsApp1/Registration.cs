@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
@@ -16,6 +17,7 @@ namespace WindowsFormsApp1
         public Registration()
         {
             InitializeComponent();
+            LoadCounty();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -40,6 +42,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Пароли не совпадают. Повторите попытку");
                 return;
             }
+            LoadInfoRegistration();
 
         }
 
@@ -75,6 +78,30 @@ namespace WindowsFormsApp1
                     "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+        void LoadInfoRegistration()
+        {
+            //    string query = "insert into ()";
+            //    SqlCommand cmd = new SqlCommand(query, Program.con);
+            //    Program.con.Open();
+            //    cmd.ExecuteNonQuery();
+            //    Program.con.Close();
+            //    this.Close();
+        }
+        void LoadCounty()
+        {
+            string query = "select [CountryName] from [Country]";
+            Program.con.Open();
+            SqlDataAdapter da = new SqlDataAdapter(query, Program.con);
+            DataSet myDS = new DataSet();
+            da.Fill(myDS, "Country");
+            Страна.DataSource = null;
+            Страна.Items.Clear();
+            for (int i = 0; i < myDS.Tables["Country"].Rows.Count; i++)
+            {
+                Страна.Items.Add(myDS.Tables["Country"].Rows[i][0].ToString());
+            }
+            Program.con.Close();
         }
     }
 }
