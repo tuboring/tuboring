@@ -1,1 +1,0 @@
-﻿SELECT [EventName], [EventTypeName], [MarathonName], [CityName], [StartDateTime], [Cost], [MaxParticipants] FROM [Event] join [EventType] on [Event].[EventTypeId] = [EventType].[EventTypeId] join [Marathon] on [Event].[MarathonId] = [Marathon].[MarathonId] where [CityName]='York' and convert(date,[StartDateTime]) = convert(date, '2011-08-09')

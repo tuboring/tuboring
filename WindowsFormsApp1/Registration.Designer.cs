@@ -246,7 +246,8 @@
             this.Статус.Items.AddRange(new object[] {
             "Спортсмен",
             "Тренер",
-            "Судья"});
+            "Судья",
+            "Болельщик"});
             this.Статус.Location = new System.Drawing.Point(181, 103);
             this.Статус.Name = "Статус";
             this.Статус.Size = new System.Drawing.Size(310, 21);
