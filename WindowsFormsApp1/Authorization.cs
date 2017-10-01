@@ -55,7 +55,8 @@ namespace WindowsFormsApp1
             if (passwordTable == password)
             {
                 Program.nameUser = myReader.GetString(2).ToString() + " " + myReader.GetValue(3).ToString();
-                string roleid= myReader.GetString(4).ToString();
+                Program.UserId = myReader.GetString(0).ToString() ;
+                string roleid = myReader.GetString(4).ToString();
                 con.Close();
                 return roleid;
             }
@@ -71,6 +72,8 @@ namespace WindowsFormsApp1
                 form = new Сoach();
             if(rName == "Runner")
                 form = new Sportsman();
+            if (rName == "Fan")
+                form = new Fan();
 
             form.ShowDialog();
             this.Close();

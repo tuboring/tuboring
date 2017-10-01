@@ -9,7 +9,8 @@ namespace WindowsFormsApp1
 {
     static class Program
     {
-        public static string nameUser = "";      
+        public static string nameUser = "";
+        public static string UserId = "";
         public static SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DatabaseVolleyBall.mdf;Integrated Security = True");
 
         /// <summary>
