@@ -1,7 +1,1 @@
-﻿CREATE TABLE [dbo].[TicketsSales]
-(
-	[IdTicketsSales] INT NOT NULL PRIMARY KEY, 
-    [EventId] INT NOT NULL, 
-    [UserId] NVARCHAR(MAX) NOT NULL, 
-    [Amount] NCHAR(10) NOT NULL
-)
+﻿ALTER TABLE [dbo].[User] ADD [CountryCode] NVARCHAR(10) NULL

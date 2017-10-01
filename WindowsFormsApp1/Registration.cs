@@ -14,10 +14,13 @@ namespace WindowsFormsApp1
 {
     public partial class Registration : Form
     {
+        string fileName;
         public Registration()
         {
             InitializeComponent();
             LoadCounty();
+            LoadRole();
+            ДатаРождения.Format = DateTimePickerFormat.Custom;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -50,12 +53,6 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void Загрузить_Click(object sender, EventArgs e)
         {
             Bitmap image; //Bitmap для открываемого изображения
@@ -67,6 +64,7 @@ namespace WindowsFormsApp1
                 try
                 {
                     image = new Bitmap(open_dialog.FileName);
+                    fileName = System.IO.Path.GetFullPath(open_dialog.FileName);
                     Фотография.Image = image;
                     Фотография.Invalidate();
                 }
@@ -79,12 +77,25 @@ namespace WindowsFormsApp1
         }
         void LoadInfoRegistration()
         {
-            //    string query = "insert into ()";
-            //    SqlCommand cmd = new SqlCommand(query, Program.con);
-            //    Program.con.Open();
-            //    cmd.ExecuteNonQuery();
-            //    Program.con.Close();
-            //    this.Close();
+
+            //get image:
+            Image img = Image.FromFile(fileName);
+            //get byte array from image:
+            byte[] byteImg = ImageToByteArray(img);
+
+            string query = "insert into [User] ([Email], [Password], [Name], [RoleId], [Telephone], [DateOfBirth], " +
+                "[CountryCode], [Photo]) values  ('" + Почта.Text + "', '" + ПовторитьПароль.Text + "', '" +
+                ФИО.Text + "', '" + LoadCodeRole().ToString() + "', '" + Телефон.Text + "', '" + 
+                ДатаРождения.Text + "', '" + LoadCodeCountry().ToString() + "', @byteImg)";
+            SqlCommand cmd = new SqlCommand(query, Program.con);
+            cmd.Parameters.Add("@byteImg", SqlDbType.Binary, 8000).Value = byteImg;
+
+            Program.con.Open();
+            cmd.ExecuteNonQuery();
+            Program.con.Close();
+            MessageBox.Show("Вы успешно зарегались!");
+
+            //ДатаРождения.Format = DateTimePickerFormat.Long;
         }
         void LoadCounty()
         {
@@ -102,6 +113,64 @@ namespace WindowsFormsApp1
             Program.con.Close();
         }
 
+        void LoadRole()
+        {
+            string query = "select [RoleName] from [Role]";
+            Program.con.Open();
+            SqlDataAdapter da = new SqlDataAdapter(query, Program.con);
+            DataSet myDS = new DataSet();
+            da.Fill(myDS, "Role");
+            Статус.DataSource = null;
+            Статус.Items.Clear();
+            for (int i = 0; i < myDS.Tables["Role"].Rows.Count; i++)
+            {
+                Статус.Items.Add(myDS.Tables["Role"].Rows[i][0].ToString());
+            }
+            Program.con.Close();
+        }
+
+        string LoadCodeRole()
+        {
+            string CRole = "";
+            string query = "select * from Role where RoleName= N'" + Статус.Text + "'";
+            SqlCommand cmd = new SqlCommand(query, Program.con);
+
+            Program.con.Open();
+            SqlDataReader myReader = cmd.ExecuteReader();
+            bool run = true;
+            while (run && myReader.Read())
+            {
+                CRole = myReader.GetString(0);
+                run = false;
+            }
+            Program.con.Close();
+            return CRole;
+        }
+
+        string LoadCodeCountry()
+        {
+            string CCountry = "";
+            string query = "select * from Country where CountryName='" + Страна.Text + "'";
+            SqlCommand cmd = new SqlCommand(query, Program.con);
+
+            Program.con.Open();
+            SqlDataReader myReader = cmd.ExecuteReader();
+            bool run = true;
+            while (run && myReader.Read())
+            {
+                CCountry = myReader.GetString(0);
+                run = false;
+            }
+            Program.con.Close();
+            return CCountry;
+        }
+
+        public byte[] ImageToByteArray(Image img)
+        {
+            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            return ms.ToArray();
+        }
 
     }
 }

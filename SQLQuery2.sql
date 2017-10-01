@@ -1,0 +1,1 @@
+﻿RENAME User tbl_name TO new_tbl_name
