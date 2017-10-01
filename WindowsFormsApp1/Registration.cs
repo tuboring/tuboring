@@ -22,17 +22,17 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (ФИО.Text == "" && Статус.Text == "" && Почта.Text == "" && Пароль.Text == "" && ПовторитьПароль.Text == "" && Телефон.Text == "" && ДатаРождения.Text == "" && Страна.Text == "")
+            if (ФИО.Text == "" || Статус.Text == "" || Почта.Text == "" || Пароль.Text == "" || ПовторитьПароль.Text == "" || Телефон.Text == "" || ДатаРождения.Text == "" || Страна.Text == "")
             {
                 MessageBox.Show("Не все поля заполнены. Повторите попытку.");
                 return;
             }
-            if (Regex.IsMatch(Почта.Text, @"/.+@.+\..+/i") == false)
+            if (Regex.IsMatch(Почта.Text, @"\A[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\z") == false)
             {
                 MessageBox.Show("Не правильно введен адрес почты. Повторите попытку.");
                 return;
             }
-            if (Regex.IsMatch(Почта.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,}") == false)
+            if (Regex.IsMatch(Пароль.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,}") == false)
             {
                 MessageBox.Show("Пароль должен содержать: /nМинимум 6 символов, /nМинимум 1 прописная буква, /nМинимум 1 цифра, /nПо крайней мере один из следующих символов: ! @ # $ % ^");
                 return;
@@ -43,7 +43,6 @@ namespace WindowsFormsApp1
                 return;
             }
             LoadInfoRegistration();
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -70,7 +69,6 @@ namespace WindowsFormsApp1
                     image = new Bitmap(open_dialog.FileName);
                     Фотография.Image = image;
                     Фотография.Invalidate();
-                    Фотография.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
                 catch
                 {

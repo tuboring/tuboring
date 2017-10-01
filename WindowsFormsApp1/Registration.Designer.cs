@@ -206,7 +206,7 @@
             this.Фотография.Location = new System.Drawing.Point(497, 66);
             this.Фотография.Name = "Фотография";
             this.Фотография.Size = new System.Drawing.Size(196, 175);
-            this.Фотография.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Фотография.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Фотография.TabIndex = 35;
             this.Фотография.TabStop = false;
             // 
