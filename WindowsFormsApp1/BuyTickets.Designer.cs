@@ -163,6 +163,7 @@
             this.Name = "BuyTickets";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Volleyball championship 2018";
+            this.Load += new System.EventHandler(this.BuyTickets_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);

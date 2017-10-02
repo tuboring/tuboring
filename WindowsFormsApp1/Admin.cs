@@ -22,5 +22,11 @@ namespace WindowsFormsApp1
             MatchCheck matchi = new MatchCheck();
             matchi.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Users user = new Users();
+            user.ShowDialog();
+        }
     }
 }

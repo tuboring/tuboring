@@ -78,6 +78,16 @@
     <Compile Include="ControlUsers.Designer.cs">
       <DependentUpon>ControlUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseVolleyBallDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseVolleyBallDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseVolleyBallDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseVolleyBallDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +271,28 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="DatabaseVolleyBallDataSet.xsc">
+      <DependentUpon>DatabaseVolleyBallDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseVolleyBallDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseVolleyBallDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseVolleyBallDataSet.xss">
+      <DependentUpon>DatabaseVolleyBallDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseVolleyBallDataSet1.xsc">
+      <DependentUpon>DatabaseVolleyBallDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseVolleyBallDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseVolleyBallDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseVolleyBallDataSet1.xss">
+      <DependentUpon>DatabaseVolleyBallDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

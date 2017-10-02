@@ -73,7 +73,7 @@ namespace WindowsFormsApp1
                         this.Close();
                     }
                     else
-                        MessageBox.Show("Осталось " + (Convert.ToInt32(dt.Rows[0][0]) - Convert.ToInt32(dt.Rows[0][1])) + " на матч");
+                        MessageBox.Show("Осталось " + (Convert.ToInt32(dt.Rows[0][0]) - Convert.ToInt32(dt.Rows[0][1])) + " билетов на матч");
                 else
                     MessageBox.Show("Введите корректное число билетов");
                
@@ -89,6 +89,11 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             loadMatchs();
+        }
+
+        private void BuyTickets_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

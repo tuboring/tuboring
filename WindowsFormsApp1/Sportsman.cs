@@ -28,5 +28,11 @@ namespace WindowsFormsApp1
             RegistrationOnMatch regonM = new RegistrationOnMatch();
             regonM.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MyTeam form = new MyTeam();
+            form.ShowDialog();
+        }
     }
 }

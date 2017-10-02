@@ -28,5 +28,11 @@ namespace WindowsFormsApp1
             EditProfile ep = new EditProfile();
             ep.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MyTeam form = new MyTeam();
+            form.ShowDialog();
+        }
     }
 }
