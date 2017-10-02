@@ -66,15 +66,15 @@ namespace WindowsFormsApp1
         void OpenFormUser(string rName)
         {
             Form form = new Form();
-            if (rName == "Administrator")
+            if (rName == "Администратор")
                 form = new Admin();
-            if(rName == "Trainer")
+            if(rName == "Тренер")
                 form = new Сoach();
-            if(rName == "Athlete")
+            if(rName == "Спортсмен")
                 form = new Sportsman();
-            if (rName == "Fun")
+            if (rName == "Болельщик")
                 form = new Fan();
-            if (rName == "Judge")
+            if (rName == "Судья")
                 form = new Referee();
             form.ShowDialog();
             this.Close();

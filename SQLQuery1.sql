@@ -1,1 +1,0 @@
-﻿ALTER TABLE [dbo].[User] ADD [CountryCode] NVARCHAR(10) NULL

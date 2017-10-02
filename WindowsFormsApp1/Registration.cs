@@ -46,6 +46,8 @@ namespace WindowsFormsApp1
                 return;
             }
             LoadInfoRegistration();
+            ConfirmRegistration fm = new ConfirmRegistration();
+            fm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

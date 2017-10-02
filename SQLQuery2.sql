@@ -1,1 +1,6 @@
-﻿RENAME User tbl_name TO new_tbl_name
+﻿CREATE TABLE [dbo].[Sas]
+(
+	[RegId] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [EventId] INT NOT NULL, 
+    [Email] NVARCHAR(100) NOT NULL
+)
