@@ -22,5 +22,11 @@ namespace WindowsFormsApp1
             Form form = new BuyTickets();
             form.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            EditProfile ep = new EditProfile();
+            ep.Show();
+        }
     }
 }

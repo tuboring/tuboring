@@ -92,5 +92,10 @@ namespace WindowsFormsApp1
             else
                 dateTimePicker1.Enabled = false;  
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

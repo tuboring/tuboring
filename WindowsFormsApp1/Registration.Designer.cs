@@ -206,7 +206,7 @@
             this.Фотография.Location = new System.Drawing.Point(497, 66);
             this.Фотография.Name = "Фотография";
             this.Фотография.Size = new System.Drawing.Size(196, 175);
-            this.Фотография.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Фотография.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Фотография.TabIndex = 35;
             this.Фотография.TabStop = false;
             // 
@@ -243,11 +243,6 @@
             // Статус
             // 
             this.Статус.FormattingEnabled = true;
-            this.Статус.Items.AddRange(new object[] {
-            "Спортсмен",
-            "Тренер",
-            "Судья",
-            "Болельщик"});
             this.Статус.Location = new System.Drawing.Point(181, 103);
             this.Статус.Name = "Статус";
             this.Статус.Size = new System.Drawing.Size(310, 21);
@@ -255,6 +250,7 @@
             // 
             // ДатаРождения
             // 
+            this.ДатаРождения.CustomFormat = "yyyy - MM - dd";
             this.ДатаРождения.Location = new System.Drawing.Point(181, 280);
             this.ДатаРождения.Name = "ДатаРождения";
             this.ДатаРождения.Size = new System.Drawing.Size(310, 20);

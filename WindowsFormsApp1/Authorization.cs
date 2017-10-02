@@ -54,9 +54,9 @@ namespace WindowsFormsApp1
 
             if (passwordTable == password)
             {
-                Program.nameUser = myReader.GetString(2).ToString() + " " + myReader.GetValue(3).ToString();
+                Program.nameUser = myReader.GetString(2).ToString();
                 Program.UserId = myReader.GetString(0).ToString() ;
-                string roleid = myReader.GetString(4).ToString();
+                string roleid = myReader.GetString(3).ToString();
                 con.Close();
                 return roleid;
             }
@@ -66,15 +66,16 @@ namespace WindowsFormsApp1
         void OpenFormUser(string rName)
         {
             Form form = new Form();
-            if (rName == "Administrator")
+            if (rName == "Администратор")
                 form = new Admin();
-            if(rName == "Coordinator")
+            if(rName == "Тренер")
                 form = new Сoach();
-            if(rName == "Runner")
+            if(rName == "Спортсмен")
                 form = new Sportsman();
-            if (rName == "Fan")
+            if (rName == "Болельщик")
                 form = new Fan();
-
+            if (rName == "Судья")
+                form = new Referee();
             form.ShowDialog();
             this.Close();
         }
