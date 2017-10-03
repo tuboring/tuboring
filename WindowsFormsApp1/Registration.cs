@@ -52,6 +52,8 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Authorization au = new Authorization();
+            au.ShowDialog();
             this.Close();
         }
 
@@ -69,6 +71,7 @@ namespace WindowsFormsApp1
                     fileName = System.IO.Path.GetFullPath(open_dialog.FileName);
                     Фотография.Image = image;
                     Фотография.Invalidate();
+                    ЗагрузкаФото.Text = fileName;
                 }
                 catch
                 {
@@ -86,7 +89,7 @@ namespace WindowsFormsApp1
             byte[] byteImg = ImageToByteArray(img);
 
             string query = "insert into [User] ([Email], [Password], [Name], [RoleId], [Telephone], [DateOfBirth], " +
-                "[CountryCode], [Photo]) values  ('" + Почта.Text + "', '" + ПовторитьПароль.Text + "', '" +
+                "[CountryCode], [Photo]) values  ('" + Почта.Text + "', '" + ПовторитьПароль.Text + "', N'" +
                 ФИО.Text + "', '" + LoadCodeRole().ToString() + "', '" + Телефон.Text + "', '" + 
                 ДатаРождения.Text + "', '" + LoadCodeCountry().ToString() + "', @byteImg)";
             SqlCommand cmd = new SqlCommand(query, Program.con);
@@ -95,7 +98,8 @@ namespace WindowsFormsApp1
             Program.con.Open();
             cmd.ExecuteNonQuery();
             Program.con.Close();
-            MessageBox.Show("Вы успешно зарегались!");
+            MessageBox.Show("Вы успешно зарегистрировались!");
+            this.Close();
 
             //ДатаРождения.Format = DateTimePickerFormat.Long;
         }
@@ -167,7 +171,7 @@ namespace WindowsFormsApp1
             return CCountry;
         }
 
-        public byte[] ImageToByteArray(Image img)
+        byte[] ImageToByteArray(Image img)
         {
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
             img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);

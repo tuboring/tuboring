@@ -1,6 +1,1 @@
-﻿CREATE TABLE [dbo].[RegistrationSportsmen]
-(
-	[RegId] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [EventId] INT NOT NULL, 
-    [Email] NVARCHAR(100) NOT NULL
-)
+﻿SELECT [User].[Email], [Country].[CountryName] FROM [User] join [Country] on [User].[CountryCode]=[Country].[CountryCode]

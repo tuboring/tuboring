@@ -1,6 +1,1 @@
-﻿CREATE TABLE [dbo].[Sas]
-(
-	[RegId] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [EventId] INT NOT NULL, 
-    [Email] NVARCHAR(100) NOT NULL
-)
+﻿SELECT * FROM [User] join [Country] 

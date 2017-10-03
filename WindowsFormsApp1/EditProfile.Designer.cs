@@ -31,27 +31,27 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.ЗагрузкаФото = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.Почта = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Телефон = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Пароль = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.ПовторитьПароль = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ФИО = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Статус = new System.Windows.Forms.ComboBox();
+            this.ДатаРождения = new System.Windows.Forms.DateTimePicker();
+            this.Страна = new System.Windows.Forms.ComboBox();
+            this.Фотография = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Фотография)).BeginInit();
             this.SuspendLayout();
             // 
             // button3
@@ -62,6 +62,7 @@
             this.button3.TabIndex = 61;
             this.button3.Text = "Редактировать";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -71,6 +72,7 @@
             this.button2.TabIndex = 60;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -80,22 +82,14 @@
             this.button1.TabIndex = 59;
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox1
+            // ЗагрузкаФото
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(504, 66);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(196, 175);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 58;
-            this.pictureBox1.TabStop = false;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(525, 313);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(130, 20);
-            this.textBox10.TabIndex = 57;
+            this.ЗагрузкаФото.Location = new System.Drawing.Point(525, 313);
+            this.ЗагрузкаФото.Name = "ЗагрузкаФото";
+            this.ЗагрузкаФото.Size = new System.Drawing.Size(130, 20);
+            this.ЗагрузкаФото.TabIndex = 57;
             // 
             // label11
             // 
@@ -137,12 +131,13 @@
             this.label8.TabIndex = 50;
             this.label8.Text = "Повторите пароль";
             // 
-            // textBox6
+            // Почта
             // 
-            this.textBox6.Location = new System.Drawing.Point(188, 136);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(310, 20);
-            this.textBox6.TabIndex = 49;
+            this.Почта.Enabled = false;
+            this.Почта.Location = new System.Drawing.Point(188, 136);
+            this.Почта.Name = "Почта";
+            this.Почта.Size = new System.Drawing.Size(310, 20);
+            this.Почта.TabIndex = 49;
             // 
             // label7
             // 
@@ -154,12 +149,12 @@
             this.label7.TabIndex = 48;
             this.label7.Text = "Дата рождения";
             // 
-            // textBox5
+            // Телефон
             // 
-            this.textBox5.Location = new System.Drawing.Point(188, 243);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(310, 20);
-            this.textBox5.TabIndex = 47;
+            this.Телефон.Location = new System.Drawing.Point(188, 243);
+            this.Телефон.Name = "Телефон";
+            this.Телефон.Size = new System.Drawing.Size(310, 20);
+            this.Телефон.TabIndex = 47;
             // 
             // label6
             // 
@@ -171,13 +166,13 @@
             this.label6.TabIndex = 46;
             this.label6.Text = "Пароль";
             // 
-            // textBox4
+            // Пароль
             // 
-            this.textBox4.Location = new System.Drawing.Point(188, 171);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PasswordChar = '*';
-            this.textBox4.Size = new System.Drawing.Size(310, 20);
-            this.textBox4.TabIndex = 45;
+            this.Пароль.Location = new System.Drawing.Point(188, 171);
+            this.Пароль.Name = "Пароль";
+            this.Пароль.PasswordChar = '*';
+            this.Пароль.Size = new System.Drawing.Size(310, 20);
+            this.Пароль.TabIndex = 45;
             // 
             // label5
             // 
@@ -189,13 +184,13 @@
             this.label5.TabIndex = 44;
             this.label5.Text = "Email";
             // 
-            // textBox3
+            // ПовторитьПароль
             // 
-            this.textBox3.Location = new System.Drawing.Point(188, 207);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(310, 20);
-            this.textBox3.TabIndex = 43;
+            this.ПовторитьПароль.Location = new System.Drawing.Point(188, 207);
+            this.ПовторитьПароль.Name = "ПовторитьПароль";
+            this.ПовторитьПароль.PasswordChar = '*';
+            this.ПовторитьПароль.Size = new System.Drawing.Size(310, 20);
+            this.ПовторитьПароль.TabIndex = 43;
             // 
             // label4
             // 
@@ -207,12 +202,12 @@
             this.label4.TabIndex = 42;
             this.label4.Text = "Статус";
             // 
-            // textBox1
+            // ФИО
             // 
-            this.textBox1.Location = new System.Drawing.Point(188, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(310, 20);
-            this.textBox1.TabIndex = 41;
+            this.ФИО.Location = new System.Drawing.Point(188, 66);
+            this.ФИО.Name = "ФИО";
+            this.ФИО.Size = new System.Drawing.Size(310, 20);
+            this.ФИО.TabIndex = 41;
             // 
             // label2
             // 
@@ -235,61 +230,73 @@
             this.label1.TabIndex = 39;
             this.label1.Text = "Редактировать профль";
             // 
-            // comboBox1
+            // Статус
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(188, 103);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(310, 21);
-            this.comboBox1.TabIndex = 62;
+            this.Статус.FormattingEnabled = true;
+            this.Статус.Location = new System.Drawing.Point(188, 103);
+            this.Статус.Name = "Статус";
+            this.Статус.Size = new System.Drawing.Size(310, 21);
+            this.Статус.TabIndex = 62;
             // 
-            // dateTimePicker1
+            // ДатаРождения
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(188, 279);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(310, 20);
-            this.dateTimePicker1.TabIndex = 63;
+            this.ДатаРождения.CustomFormat = "yyyy - MM - dd";
+            this.ДатаРождения.Location = new System.Drawing.Point(188, 279);
+            this.ДатаРождения.Name = "ДатаРождения";
+            this.ДатаРождения.Size = new System.Drawing.Size(310, 20);
+            this.ДатаРождения.TabIndex = 63;
             // 
-            // comboBox2
+            // Страна
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(188, 311);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(310, 21);
-            this.comboBox2.TabIndex = 64;
+            this.Страна.FormattingEnabled = true;
+            this.Страна.Location = new System.Drawing.Point(188, 311);
+            this.Страна.Name = "Страна";
+            this.Страна.Size = new System.Drawing.Size(310, 21);
+            this.Страна.TabIndex = 64;
+            // 
+            // Фотография
+            // 
+            this.Фотография.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Фотография.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Фотография.Location = new System.Drawing.Point(504, 66);
+            this.Фотография.Name = "Фотография";
+            this.Фотография.Size = new System.Drawing.Size(196, 175);
+            this.Фотография.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Фотография.TabIndex = 65;
+            this.Фотография.TabStop = false;
             // 
             // EditProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 382);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Фотография);
+            this.Controls.Add(this.Страна);
+            this.Controls.Add(this.ДатаРождения);
+            this.Controls.Add(this.Статус);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.ЗагрузкаФото);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.Почта);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.Телефон);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.Пароль);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.ПовторитьПароль);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ФИО);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "EditProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Volleyball championship 2018";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Фотография)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,25 +307,25 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox ЗагрузкаФото;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox Почта;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox Телефон;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox Пароль;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox ПовторитьПароль;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ФИО;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox Статус;
+        private System.Windows.Forms.DateTimePicker ДатаРождения;
+        private System.Windows.Forms.ComboBox Страна;
+        private System.Windows.Forms.PictureBox Фотография;
     }
 }
