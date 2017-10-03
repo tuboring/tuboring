@@ -85,6 +85,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "yyyy - MM - dd";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(310, 102);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(196, 20);
@@ -133,7 +134,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(13, 20);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(161, 315);
+            this.dataGridView1.Size = new System.Drawing.Size(680, 315);
             this.dataGridView1.TabIndex = 46;
             // 
             // RegistrationOnMatch
