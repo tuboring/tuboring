@@ -1,1 +1,1 @@
-﻿SELECT * FROM [User] join [Country] 
+﻿insert into [RegOnMatch] ([EmailSportsmen], [EventId], [CityName], [RegistrationStatucId]) values  ('a.ashton@saucedout.com', '15_5FR', 'Sao Paulo', 4)

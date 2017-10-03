@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         public RegistrationOnMatch()
         {
             InitializeComponent();
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            LoadTable();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -57,27 +57,42 @@ namespace WindowsFormsApp1
 
                 if (c.GetType() == typeof(TextBox))
                     c.Text = string.Empty;
+
+                if (c.GetType() == typeof(ComboBox))
+                    c.Text = string.Empty;
             }
         }
 
         void LoadTable()
         {
-            string query = "Select [Event].[EventName], [RegOnMatch].[CityName], [RegistrationStatus].[RegistrationStatus] FROM [RegOnMatch] JOIN [Event] ON [Event].[EventId]=[RegOnMatch].[EventId] JOIN [RegistrationStatus] ON [RegistrationStatus].[RegistrationStatusId]=[RegOnMatch].[RegistrationStatucId]";
-            Program.con.Open();
+            while (dataGridView1.Columns.Count > 0)
+                for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                    dataGridView1.Columns.Remove(dataGridView1.Columns[i]);
+
+            string query = "Select [Event].[EventName], [RegOnMatch].[CityName], " +
+                "[RegistrationStatus].[RegistrationStatus] FROM [RegOnMatch] JOIN [Event] ON " +
+                "[Event].[EventId]=[RegOnMatch].[EventId] JOIN [RegistrationStatus] ON " +
+                "[RegistrationStatus].[RegistrationStatusId]=[RegOnMatch].[RegistrationStatucId]" +
+                "WHERE [RegOnMatch].[EmailSportsmen]='"+Program.UserId+"'";
             SqlDataAdapter da = new SqlDataAdapter(query, Program.con);
-            DataSet myDS = new DataSet();
-            da.Fill(myDS, "Match");
-            Матч.DataSource = null;
-            Матч.Items.Clear();
-            for (int i = 0; i < myDS.Tables["Match"].Rows.Count; i++)
-            {
-                Матч.Items.Add(myDS.Tables["Match"].Rows[i][0].ToString());
-            }
+
+            DataSet ds = new DataSet();
+            da.Fill(ds, "Match");
+            dataGridView1.DataSource = ds.Tables[0];
+            dataGridView1.AutoResizeColumns();
             Program.con.Close();
+
+
+            dataGridView1.Columns[0].HeaderText = "Матч";
+            dataGridView1.Columns[1].HeaderText = "Город";
+            dataGridView1.Columns[2].HeaderText = "Статус";
+
+            dataGridView1.AutoResizeColumns();
         }
 
         void AddNew()
         {
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
             string cEvent = "";
             string query = "select [EventId], [CityName] from [Event] where convert(date,[StartDateTime]) = convert(date, '"+ dateTimePicker1.Text+ "') AND [CityName]='"+ Город.Text+"'";
             SqlCommand cmd = new SqlCommand(query, Program.con);
@@ -93,13 +108,14 @@ namespace WindowsFormsApp1
             Program.con.Close();
 
             query = "insert into [RegOnMatch] ([EmailSportsmen], [EventId], [CityName], [RegistrationStatucId]) " +
-                "values  ('" + Program.UserId + "', '" + cEvent+ "'"+ Город.Text+", 4')";
+                "values  ('" + Program.UserId + "', '" + cEvent+ "', '"+ Город.Text+"', 4)";
+            cmd = new SqlCommand(query, Program.con);
 
             Program.con.Open();
             cmd.ExecuteNonQuery();
-            Program.con.Close();
             MessageBox.Show("Вы успешно зарегистрировались!");
-            this.Close();
+            dataGridView1.Visible = true;
+            Program.con.Close();
         }
 
 

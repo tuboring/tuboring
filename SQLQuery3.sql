@@ -1,1 +1,1 @@
-﻿SELECT [User].[Email], [Country].[CountryName] FROM [User] join [Country] on [User].[CountryCode]=[Country].[CountryCode]
+﻿Select [Event].[EventName], [RegOnMatch].[CityName], [RegistrationStatus].[RegistrationStatus] FROM [RegOnMatch] JOIN [Event] ON [Event].[EventId]=[RegOnMatch].[EventId] JOIN [RegistrationStatus] ON [RegistrationStatus].[RegistrationStatusId]=[RegOnMatch].[RegistrationStatucId]WHERE [RegOnMatch].[EmailSportsmen]='a.ashton@saucedout.com'
