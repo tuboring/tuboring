@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         public RegistrationOnMatch()
         {
             InitializeComponent();
-
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
 
         void LoadTable()
         {
-            string query = "select [MarathonName] from [Marathon]";
+            string query = "Select [Event].[EventName], [RegOnMatch].[CityName], [RegistrationStatus].[RegistrationStatus] FROM [RegOnMatch] JOIN [Event] ON [Event].[EventId]=[RegOnMatch].[EventId] JOIN [RegistrationStatus] ON [RegistrationStatus].[RegistrationStatusId]=[RegOnMatch].[RegistrationStatucId]";
             Program.con.Open();
             SqlDataAdapter da = new SqlDataAdapter(query, Program.con);
             DataSet myDS = new DataSet();
@@ -78,8 +78,30 @@ namespace WindowsFormsApp1
 
         void AddNew()
         {
+            string cEvent = "";
+            string query = "select [EventId], [CityName] from [Event] where convert(date,[StartDateTime]) = convert(date, '"+ dateTimePicker1.Text+ "') AND [CityName]='"+ Город.Text+"'";
+            SqlCommand cmd = new SqlCommand(query, Program.con);
 
+            Program.con.Open();
+            SqlDataReader myReader = cmd.ExecuteReader();
+            bool run = true;
+            while (run && myReader.Read())
+            {
+                cEvent = myReader.GetString(0);
+                run = false;
+            }
+            Program.con.Close();
+
+            query = "insert into [RegOnMatch] ([EmailSportsmen], [EventId], [CityName], [RegistrationStatucId]) " +
+                "values  ('" + Program.UserId + "', '" + cEvent+ "'"+ Город.Text+", 4')";
+
+            Program.con.Open();
+            cmd.ExecuteNonQuery();
+            Program.con.Close();
+            MessageBox.Show("Вы успешно зарегистрировались!");
+            this.Close();
         }
+
 
         private void Матч_SelectedIndexChanged(object sender, EventArgs e)
         {

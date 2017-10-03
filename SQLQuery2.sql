@@ -1,1 +1,1 @@
-﻿SELECT Runner.Email, User.Name From Runner Left join [User] on Runner.Email = User.Email
+﻿SELECT * FROM [User] join [Country] 

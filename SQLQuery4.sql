@@ -1,0 +1,1 @@
+﻿SELECT * FROM [User] join [Role] on [User].[RoleId]=[Role].[RoleId] 
