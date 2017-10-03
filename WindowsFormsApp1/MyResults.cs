@@ -11,10 +11,13 @@ using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
-    SqlConnection con = Program.con;
+ 
 
     public partial class MyResults : Form
     {
+
+        SqlConnection con = Program.con;
+
         public MyResults()
         {
             InitializeComponent();
@@ -25,29 +28,29 @@ namespace WindowsFormsApp1
 
         }
 
-        void loadTeam()
+        void loadResult()
         {
 
-            string query = "SELECT Runner.CountryCode From Runner where Runner.Email = '" + Program.UserId + "'";
+            string query = "SELECT Event.EventName, ResultEvent.Result From ResultEvent inner join Event on ResultEvent.EventId = Event.EventId And Event.StartDateTime >=  '" + dateTimePicker1.Value + "'And Event.StartDateTime <=  '" + dateTimePicker2.Value + "' where ResultEvent.Email = '" + Program.UserId + "'";
             con.Open();
-
             SqlDataAdapter da = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             da.Fill(dt);
-
-            query = "SELECT Runner.Email, [User].Name AS Имя From Runner Left join [User] on Runner.Email = [User].Email  where Runner.CountryCode = '" + dt.Rows[0][0].ToString() + "'";
-            da = new SqlDataAdapter(query, con);
-            dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            dataGridView1.Columns[0].Visible = false;
             con.Close();
+            label3.Text += "\r\n";
+            label4.Text += "\r\n";
+
+            for (int i =0; i< dt.Rows.Count; i++)
+            {
+                label3.Text += dt.Rows[i][0].ToString() + "\r\n";
+                label4.Text += dt.Rows[i][1].ToString() + "\r\n";
+            }
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            loadResult();
         }
     }
 }
