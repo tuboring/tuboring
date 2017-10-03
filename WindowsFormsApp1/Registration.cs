@@ -178,5 +178,23 @@ namespace WindowsFormsApp1
             return ms.ToArray();
         }
 
+        private void Телефон_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (CheckLenghtTextbox((TextBox)sender, 9) && (Char.IsDigit(e.KeyChar)))
+                e.Handled = false;
+            else if (e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else e.Handled = true;
+
+        
+        }
+        bool CheckLenghtTextbox(TextBox tx, int lenght)
+        {
+            if (tx.Text.Length > lenght)
+                return false;
+            else return true;
+        }
     }
 }
