@@ -54,7 +54,6 @@ namespace WindowsFormsApp1
             da.Fill(dt);
 
             dataGridView1.DataSource = dt;
-
             con.Close();
 
         }
