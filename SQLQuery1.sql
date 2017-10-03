@@ -1,1 +1,7 @@
-﻿SELECT * FROM [User] join [Role] on [User].[RoleId]=[Role].[RoleId] WHERE [Email] = 'a.ashton@saucedout.com'
+﻿CREATE TABLE [dbo].[ResultEvant]
+(
+	[IdResult] INT IDENTITY (1, 1)  NOT NULL PRIMARY KEY, 
+    [EventId] NVARCHAR(50) NULL, 
+    [Email] NVARCHAR(MAX) NULL, 
+    [Result] NVARCHAR(MAX) NULL
+)
