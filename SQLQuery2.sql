@@ -1,6 +1,1 @@
-﻿CREATE TABLE [dbo].[Sas]
-(
-	[RegId] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [EventId] INT NOT NULL, 
-    [Email] NVARCHAR(100) NOT NULL
-)
+﻿SELECT Runner.Email, User.Name From Runner Left join [User] on Runner.Email = User.Email
