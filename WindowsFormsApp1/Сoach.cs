@@ -28,5 +28,15 @@ namespace WindowsFormsApp1
             MyTeam form = new MyTeam();
             form.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
