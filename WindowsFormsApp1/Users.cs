@@ -23,6 +23,8 @@ namespace WindowsFormsApp1
 
         private void Users_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseVolleyBallDataSet1.User". При необходимости она может быть перемещена или удалена.
+            this.userTableAdapter1.Fill(this.databaseVolleyBallDataSet1.User);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseVolleyBallDataSet1.Country". При необходимости она может быть перемещена или удалена.
             this.countryTableAdapter.Fill(this.databaseVolleyBallDataSet1.Country);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseVolleyBallDataSet.User". При необходимости она может быть перемещена или удалена.
@@ -55,6 +57,19 @@ namespace WindowsFormsApp1
 
             dataGridView1.DataSource = dt;
             con.Close();
+
+        }
+
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.roleTableAdapter.Fill(this.databaseVolleyBallDataSet1.Role);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
     }

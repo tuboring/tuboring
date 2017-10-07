@@ -47,6 +47,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.roleBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.fKUserRoleId3E52440BBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userTableAdapter1 = new WindowsFormsApp1.DatabaseVolleyBallDataSet1TableAdapters.UserTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseVolleyBallDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
@@ -55,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKUserRoleId3E52440BBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -199,11 +202,20 @@
             this.roleBindingSource2.DataMember = "Role";
             this.roleBindingSource2.DataSource = this.databaseVolleyBallDataSet1;
             // 
+            // fKUserRoleId3E52440BBindingSource
+            // 
+            this.fKUserRoleId3E52440BBindingSource.DataMember = "FK__User__RoleId__3E52440B";
+            this.fKUserRoleId3E52440BBindingSource.DataSource = this.roleBindingSource2;
+            // 
+            // userTableAdapter1
+            // 
+            this.userTableAdapter1.ClearBeforeFill = true;
+            // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(705, 382);
+            this.ClientSize = new System.Drawing.Size(713, 390);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
@@ -223,6 +235,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKUserRoleId3E52440BBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,5 +261,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.BindingSource roleBindingSource2;
+        private System.Windows.Forms.BindingSource fKUserRoleId3E52440BBindingSource;
+        private DatabaseVolleyBallDataSet1TableAdapters.UserTableAdapter userTableAdapter1;
     }
 }
