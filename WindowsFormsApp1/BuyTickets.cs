@@ -74,6 +74,9 @@ namespace WindowsFormsApp1
                     }
                     else
                         MessageBox.Show("Осталось " + (Convert.ToInt32(dt.Rows[0][0]) - Convert.ToInt32(dt.Rows[0][1])) + " билетов на матч");
+                TicketMatch asasa = new TicketMatch();
+                asasa.Show();
+                this.Close();
                 else
                     MessageBox.Show("Введите корректное число билетов");
                

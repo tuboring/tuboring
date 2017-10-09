@@ -314,6 +314,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>DatabaseVolleyBall.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\биелт.png" />
     <None Include="Resources\5668_600.jpg" />
     <None Include="Resources\show_image.jpg" />
     <None Include="Resources\vfv-process-new-03.jpg" />
