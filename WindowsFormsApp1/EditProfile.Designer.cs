@@ -155,6 +155,7 @@
             this.Телефон.Name = "Телефон";
             this.Телефон.Size = new System.Drawing.Size(310, 20);
             this.Телефон.TabIndex = 47;
+            this.Телефон.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Телефон_KeyPress);
             // 
             // label6
             // 

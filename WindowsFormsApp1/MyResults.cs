@@ -30,9 +30,21 @@ namespace WindowsFormsApp1
 
         void loadResult()
         {
-
-            string query = "SELECT Event.EventName, ResultEvent.Result From ResultEvent inner join Event on ResultEvent.EventId = Event.EventId And Event.StartDateTime >=  '" + dateTimePicker1.Value + "'And Event.StartDateTime <=  '" + dateTimePicker2.Value + "' where ResultEvent.Email = '" + Program.UserId + "'";
             con.Open();
+
+            //SqlCommand cmd = new SqlCommand();
+            //cmd.Connection = con;
+            //cmd.CommandText = " insert into ResultEvent(Email, EventId, Result) values('a.ashton@saucedout.com', '11_1FM', 'Красавчик ЖИЕСТЬ')";
+            //cmd.ExecuteNonQuery();
+            //cmd.CommandText = " insert into ResultEvent(Email, EventId, Result) values('a.ashton@saucedout.com', '11_1HM', 'Красавчик ЖИЕСТЬ2')";
+            //cmd.ExecuteNonQuery();
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "yyyy - MM - dd";
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.CustomFormat = "yyyy - MM - dd";
+
+            string query = "SELECT [Event].EventName, ResultEvent.Result From ResultEvent inner join [Event] on ResultEvent.EventId = [Event].EventId And [Event].StartDateTime >=  convert(date,'" + dateTimePicker1.Text + "') And [Event].StartDateTime <=  convert(date,'" + dateTimePicker2.Text + "') where ResultEvent.Email = '" + Program.UserId + "'";
+           
             SqlDataAdapter da = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -45,6 +57,8 @@ namespace WindowsFormsApp1
                 label3.Text += dt.Rows[i][0].ToString() + "\r\n";
                 label4.Text += dt.Rows[i][1].ToString() + "\r\n";
             }
+            if (dt.Rows.Count == 0)
+                MessageBox.Show("Данных нет, сорян");
 
         }
 

@@ -28,5 +28,11 @@ namespace WindowsFormsApp1
             Users user = new Users();
             user.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Tickets tickets = new Tickets();
+            tickets.ShowDialog();
+        }
     }
 }

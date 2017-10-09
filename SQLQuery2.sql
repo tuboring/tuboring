@@ -1,1 +1,1 @@
-﻿insert into [RegOnMatch] ([EmailSportsmen], [EventId], [CityName], [RegistrationStatucId]) values  ('a.ashton@saucedout.com', '15_5FR', 'Sao Paulo', 4)
+﻿SELECT [Event].EventName, ResultEvent.Result From ResultEvent inner join [Event] on ResultEvent.EventId = [Event].EventId And [Event].StartDateTime >=  '2010-01-01' And [Event].StartDateTime <=  '2018-01-01' where ResultEvent.Email = 'a.ashton@saucedout.com'

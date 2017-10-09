@@ -57,6 +57,7 @@
             this.button2.TabIndex = 28;
             this.button2.Text = "Билеты";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 

@@ -31,7 +31,18 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MyTeam form = new MyTeam();
+            MatchCheck form = new MatchCheck();
+            form.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Tickets form = new Tickets();
             form.ShowDialog();
         }
     }
