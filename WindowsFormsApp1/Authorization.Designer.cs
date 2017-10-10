@@ -87,7 +87,7 @@
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(255, 20);
             this.loginTextBox.TabIndex = 12;
-            this.loginTextBox.Text = "admin@ya.ru";
+            this.loginTextBox.Text = "a.allison@gmail.com";
             // 
             // passwordTextBox
             // 
@@ -96,7 +96,7 @@
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(255, 20);
             this.passwordTextBox.TabIndex = 13;
-            this.passwordTextBox.Text = "admin";
+            this.passwordTextBox.Text = "OPuDrw9O";
             // 
             // button1
             // 

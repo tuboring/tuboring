@@ -39,5 +39,13 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void Выход_Click(object sender, EventArgs e)
+        {
+            Program.UserId = "";
+            Program.nameUser = "";
+            Application.Run(new Authorization());
+            this.Close();
+        }
     }
 }

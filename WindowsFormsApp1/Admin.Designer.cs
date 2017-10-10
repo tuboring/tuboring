@@ -35,6 +35,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.Выход = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button3
@@ -112,11 +113,22 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // Выход
+            // 
+            this.Выход.Location = new System.Drawing.Point(12, 12);
+            this.Выход.Name = "Выход";
+            this.Выход.Size = new System.Drawing.Size(75, 23);
+            this.Выход.TabIndex = 33;
+            this.Выход.Text = "Выход";
+            this.Выход.UseVisualStyleBackColor = true;
+            this.Выход.Click += new System.EventHandler(this.Выход_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 382);
+            this.Controls.Add(this.Выход);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
@@ -141,5 +153,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button Выход;
     }
 }

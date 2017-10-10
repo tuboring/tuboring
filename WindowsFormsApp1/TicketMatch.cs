@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace WindowsFormsApp1
 {
@@ -46,15 +47,24 @@ namespace WindowsFormsApp1
 
 
             label2.Text = dt1.Rows[0][2].ToString();
-            label4.Text = dt1.Rows[0][2].ToString();
             label6.Text = "RUS";
             label8.Text = dt2.Rows[0][5].ToString();            
             label10.Text = (Convert.ToDouble(dt.Rows[0][3]) * Convert.ToDouble(dt2.Rows[0][5])).ToString();
-            //if ( dt1.Rows[0][7].ToString());
-            //Bitmap image = new Bitmap((byte[])dt1.Rows[0][7]);
-            //string fileName = System.IO.Path.GetFullPath(dt1.Rows[0][7].ToString());
-            //pictureBox2.Image = image;
-            //pictureBox2.Invalidate();
+
+            query = "SELECT [User].[Photo] FROM [User]  WHERE [Email] ='" + dt.Rows[0][2] + "'";
+            Program.con.Open();
+            da = new SqlDataAdapter(query, Program.con);
+            DataSet myDS = new DataSet();
+            da.Fill(myDS, "User");
+
+            if (myDS.Tables["User"].Rows[0][0].ToString() != "")
+            {
+                Byte[] data = new Byte[0];
+                data = (Byte[])(myDS.Tables["User"].Rows[0][0]);
+                MemoryStream mem = new MemoryStream(data);
+                Фотография.Image = Image.FromStream(mem);
+            }
+            con.Close();
         }
     }
 }

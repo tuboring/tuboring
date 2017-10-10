@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.Фотография = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -41,7 +39,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Фотография)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -54,54 +52,35 @@
             this.pictureBox1.TabIndex = 78;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // Фотография
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Location = new System.Drawing.Point(132, 113);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(109, 116);
-            this.pictureBox2.TabIndex = 79;
-            this.pictureBox2.TabStop = false;
+            this.Фотография.BackColor = System.Drawing.Color.Transparent;
+            this.Фотография.Location = new System.Drawing.Point(132, 113);
+            this.Фотография.Name = "Фотография";
+            this.Фотография.Size = new System.Drawing.Size(109, 116);
+            this.Фотография.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Фотография.TabIndex = 79;
+            this.Фотография.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(257, 113);
+            this.label1.Location = new System.Drawing.Point(257, 136);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 80;
-            this.label1.Text = "Фамилия";
+            this.label1.Text = "ФИО";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(319, 113);
+            this.label2.Location = new System.Drawing.Point(319, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 81;
             this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(257, 136);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
-            this.label3.TabIndex = 82;
-            this.label3.Text = "Имя";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(319, 136);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 83;
-            this.label4.Text = "label4";
             // 
             // label5
             // 
@@ -174,18 +153,16 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.Фотография);
             this.Controls.Add(this.pictureBox1);
             this.Name = "TicketMatch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Volleyball championship 2018";
             this.Load += new System.EventHandler(this.TicketMatch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Фотография)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,11 +171,9 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox Фотография;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
