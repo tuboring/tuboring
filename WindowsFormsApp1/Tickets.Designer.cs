@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.eventBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseVolleyBallDataSet1 = new WindowsFormsApp1.DatabaseVolleyBallDataSet1();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,14 +43,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.databaseVolleyBallDataSet1 = new WindowsFormsApp1.DatabaseVolleyBallDataSet1();
-            this.eventBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eventTableAdapter = new WindowsFormsApp1.DatabaseVolleyBallDataSet1TableAdapters.EventTableAdapter();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseVolleyBallDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseVolleyBallDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,6 +73,16 @@
             this.comboBox2.TabIndex = 74;
             this.comboBox2.ValueMember = "EventId";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // eventBindingSource
+            // 
+            this.eventBindingSource.DataMember = "Event";
+            this.eventBindingSource.DataSource = this.databaseVolleyBallDataSet1;
+            // 
+            // databaseVolleyBallDataSet1
+            // 
+            this.databaseVolleyBallDataSet1.DataSetName = "DatabaseVolleyBallDataSet1";
+            this.databaseVolleyBallDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -153,6 +163,7 @@
             this.button2.TabIndex = 86;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // numericUpDown1
             // 
@@ -167,16 +178,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(252, 20);
             this.dateTimePicker1.TabIndex = 88;
-            // 
-            // databaseVolleyBallDataSet1
-            // 
-            this.databaseVolleyBallDataSet1.DataSetName = "DatabaseVolleyBallDataSet1";
-            this.databaseVolleyBallDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // eventBindingSource
-            // 
-            this.eventBindingSource.DataMember = "Event";
-            this.eventBindingSource.DataSource = this.databaseVolleyBallDataSet1;
             // 
             // eventTableAdapter
             // 
@@ -223,9 +224,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Volleyball championship 2018";
             this.Load += new System.EventHandler(this.Tickets_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseVolleyBallDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseVolleyBallDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

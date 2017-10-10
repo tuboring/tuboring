@@ -48,10 +48,10 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (comboBox2.SelectedIndex != -1 && numericUpDown1.Value > 0 && numericUpDown1.Value < 100 && comboBox5.SelectedIndex != -1)
+            if (comboBox2.SelectedIndex != -1 )
             {
                 int Sale = 0;
-            if (comboBox5.SelectedIndex == 2)
+            if (comboBox5.SelectedIndex == 1)
                 Sale += 5;
             if (numericUpDown1.Value > 2)
                 Sale += 20;
@@ -62,6 +62,11 @@ namespace WindowsFormsApp1
 
             label4.Text = Sale.ToString() + "%";
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            label4.Text = "";
         }
     }
 }
