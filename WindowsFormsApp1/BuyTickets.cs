@@ -23,7 +23,6 @@ namespace WindowsFormsApp1
 
         void loadMatchs()
         {
-           
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "yyyy - MM - dd";
             string query = "SELECT Event.EventName, Event.EventId From Event where convert(date,[StartDateTime]) = convert(date,'" + dateTimePicker1.Text + "')";
