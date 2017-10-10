@@ -88,6 +88,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseVolleyBallDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseVolleyBallDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseVolleyBallDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,6 +298,17 @@
     <None Include="DatabaseVolleyBallDataSet1.xss">
       <DependentUpon>DatabaseVolleyBallDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="DatabaseVolleyBallDataSet2.xsc">
+      <DependentUpon>DatabaseVolleyBallDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseVolleyBallDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseVolleyBallDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseVolleyBallDataSet2.xss">
+      <DependentUpon>DatabaseVolleyBallDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -314,6 +330,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>DatabaseVolleyBall.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\биелт.png" />
     <None Include="Resources\5668_600.jpg" />
     <None Include="Resources\show_image.jpg" />
     <None Include="Resources\vfv-process-new-03.jpg" />

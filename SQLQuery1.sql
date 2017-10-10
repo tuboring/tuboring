@@ -1,1 +1,1 @@
-﻿SELECT [Event].EventName, ResultEvent.Result From ResultEvent inner join [Event] on ResultEvent.EventId = [Event].EventId And [Event].StartDateTime >=  '2010-01-01' And [Event].StartDateTime <=  '2018-01-01' where ResultEvent.Email = 'a.ashton@saucedout.com'
+﻿select [Event].[CityName] from [Event] GROUP BY [Event].[CityName]

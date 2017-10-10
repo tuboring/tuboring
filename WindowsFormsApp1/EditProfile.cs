@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -116,6 +117,37 @@ namespace WindowsFormsApp1
             }
         }
 
+        public Image ResizeOrigImg(Image image)
+        {
+            int newWidth = 196, newHeight;
+
+            var coefH = (double)175 / (double)image.Height;
+            var coefW = (double)196 / (double)image.Width;
+
+            if (coefW >= coefH)
+            {
+                newHeight = (int)(image.Height * coefH);
+                newWidth = (int)(image.Width * coefH);
+            }
+            else
+            {
+                newHeight = (int)(image.Height * coefW);
+                newWidth = (int)(image.Width * coefW);
+            }
+
+            Image result = new Bitmap(newWidth, newHeight);
+            using (var g = Graphics.FromImage(result))
+            {
+                g.CompositingQuality = CompositingQuality.HighQuality;
+                g.SmoothingMode = SmoothingMode.HighQuality;
+                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+                g.DrawImage(image, 0, 0, newWidth, newHeight);
+                g.Dispose();
+            }
+            return result;
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             if (ФИО.Text == "" || Статус.Text == "" || Почта.Text == "" || Пароль.Text == "" || ПовторитьПароль.Text == "" || Телефон.Text == "" || ДатаРождения.Text == "" || Страна.Text == "")
@@ -126,11 +158,6 @@ namespace WindowsFormsApp1
             if (Regex.IsMatch(Почта.Text, @"\A[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\z") == false)
             {
                 MessageBox.Show("Не правильно введен адрес почты. Повторите попытку.");
-                return;
-            }
-            if (Regex.IsMatch(Пароль.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,}") == false)
-            {
-                MessageBox.Show("Пароль должен содержать: /nМинимум 6 символов, /nМинимум 1 прописная буква, /nМинимум 1 цифра, /nПо крайней мере один из следующих символов: ! @ # $ % ^");
                 return;
             }
             if (Пароль.Text != ПовторитьПароль.Text)
@@ -147,7 +174,7 @@ namespace WindowsFormsApp1
             if (newImage)
             {
                 //get image:
-                Image img = Image.FromFile(fileName);
+                Image img = ResizeOrigImg(Image.FromFile(fileName));
                 //get byte array from image:
                 byte[] byteImg = ImageToByteArray(img);
                 string query = "update [User] set [Password]='" + ПовторитьПароль.Text + "', [Name]= N'" + ФИО.Text +

@@ -22,5 +22,14 @@ namespace WindowsFormsApp1
             EditProfile ep = new EditProfile();
             ep.Show();
         }
+
+        private void Выход_Click(object sender, EventArgs e)
+        {
+            Program.UserId = "";
+            Program.nameUser = "";
+            Authorization autorisation = new Authorization();
+            autorisation.Show();
+            this.Close();
+        }
     }
 }
