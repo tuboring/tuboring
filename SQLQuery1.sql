@@ -1,1 +1,1 @@
-﻿SELECT [User].Name As Имя, Country.CountryName as Страна, Role.RoleName As Роль From [User] left join Country on [User].CountryCode = Country.CountryCode left join Role on [User].RoleId = Role.RoleId where [Role].RoleName =  'Спортсмен'
+﻿select [Event].[CityName] from [Event] GROUP BY [Event].[CityName]

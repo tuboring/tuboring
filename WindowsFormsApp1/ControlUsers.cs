@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -139,6 +140,36 @@ namespace WindowsFormsApp1
                 this.Close();
             }
         }
+        public Image ResizeOrigImg(Image image)
+        {
+            int newWidth = 196, newHeight;
+
+            var coefH = (double)175 / (double)image.Height;
+            var coefW = (double)196 / (double)image.Width;
+
+            if (coefW >= coefH)
+            {
+                newHeight = (int)(image.Height * coefH);
+                newWidth = (int)(image.Width * coefH);
+            }
+            else
+            {
+                newHeight = (int)(image.Height * coefW);
+                newWidth = (int)(image.Width * coefW);
+            }
+
+            Image result = new Bitmap(newWidth, newHeight);
+            using (var g = Graphics.FromImage(result))
+            {
+                g.CompositingQuality = CompositingQuality.HighQuality;
+                g.SmoothingMode = SmoothingMode.HighQuality;
+                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+                g.DrawImage(image, 0, 0, newWidth, newHeight);
+                g.Dispose();
+            }
+            return result;
+        }
 
         void AddUser()
         {
@@ -148,7 +179,7 @@ namespace WindowsFormsApp1
                 //get image:
                 Image img = Image.FromFile(fileName);
                 //get byte array from image:
-                byte[] byteImg = ImageToByteArray(img);
+                byte[] byteImg = ImageToByteArray(ResizeOrigImg(img));
                 string query = "insert into [User] ([Email], [Password], [Name], [RoleId], " +
                     "[CountryCode], [Photo]) values  ('" + Почта.Text + "', '" + Пароль.Text + "', N'" +
                     ФИО.Text + "', '" + LoadCodeRole().ToString() + "', '" + LoadCodeCountry().ToString() + "', @byteImg)";
@@ -176,7 +207,7 @@ namespace WindowsFormsApp1
                 //get image:
                 Image img = Image.FromFile(fileName);
                 //get byte array from image:
-                byte[] byteImg = ImageToByteArray(img);
+                byte[] byteImg = ImageToByteArray(ResizeOrigImg(img));
                 string query = "update [User] set [Password]='" + Пароль.Text + "', [Email]= N'" + Почта.Text + "', [Name]= N'" + ФИО.Text +
                     "', [RoleId]='" + LoadCodeRole().ToString() + "', [CountryCode]='" + LoadCodeCountry().ToString() +
                     "', [Photo]=@byteImg where [Email]='" + email + "'";

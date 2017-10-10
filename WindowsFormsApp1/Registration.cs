@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing.Drawing2D;
 
 namespace WindowsFormsApp1
 {
@@ -50,6 +51,37 @@ namespace WindowsFormsApp1
             fm.Show();
         }
 
+        public Image ResizeOrigImg(Image image)
+        {
+            int newWidth = 196, newHeight;
+
+            var coefH = (double)175 / (double)image.Height;
+            var coefW = (double)196 / (double)image.Width;
+
+            if (coefW >= coefH)
+            {
+                newHeight = (int)(image.Height * coefH);
+                newWidth = (int)(image.Width * coefH);
+            }
+            else
+            {
+                newHeight = (int)(image.Height * coefW);
+                newWidth = (int)(image.Width * coefW);
+            }
+
+            Image result = new Bitmap(newWidth, newHeight);
+            using (var g = Graphics.FromImage(result))
+            {
+                g.CompositingQuality = CompositingQuality.HighQuality;
+                g.SmoothingMode = SmoothingMode.HighQuality;
+                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+                g.DrawImage(image, 0, 0, newWidth, newHeight);
+                g.Dispose();
+            }
+            return result;
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             Authorization au = new Authorization();
@@ -86,7 +118,7 @@ namespace WindowsFormsApp1
             //get image:
             Image img = Image.FromFile(fileName);
             //get byte array from image:
-            byte[] byteImg = ImageToByteArray(img);
+            byte[] byteImg = ImageToByteArray(ResizeOrigImg(img));
 
             string query = "insert into [User] ([Email], [Password], [Name], [RoleId], [Telephone], [DateOfBirth], " +
                 "[CountryCode], [Photo]) values  ('" + Почта.Text + "', '" + ПовторитьПароль.Text + "', N'" +
