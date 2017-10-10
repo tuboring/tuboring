@@ -1,1 +1,1 @@
-﻿SELECT [Event].EventName, ResultEvent.Result From ResultEvent inner join [Event] on ResultEvent.EventId = [Event].EventId And [Event].StartDateTime >=  convert(date,'03.10.2010 14:26:00') And [Event].StartDateTime <=  convert(date,'03.10.2017 17:05:30') where ResultEvent.Email = 'a.ashton@saucedout.com'
+﻿SELECT [User].[Email], [User].[Password], [User].[Name], [Role].[RoleName], [User].[Photo] FROM [User] join [Role] on [User].[RoleId]=[Role].[RoleId]

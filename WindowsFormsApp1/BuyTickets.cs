@@ -56,11 +56,11 @@ namespace WindowsFormsApp1
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                 query = "SELECT (MAX(IdTicketsSales)+1) From TicketsSales";
-                 da = new SqlDataAdapter(query, con);
+                query = "SELECT (MAX(IdTicketsSales)+1) From TicketsSales";
+                da = new SqlDataAdapter(query, con);
                 DataTable dt1 = new DataTable();
                 da.Fill(dt1);
-         
+
                 if (numericUpDown1.Value > 0)
                     if (Convert.ToInt32(dt.Rows[0][1]) + numericUpDown1.Value <= Convert.ToInt32(dt.Rows[0][0]))
                     {
@@ -71,16 +71,21 @@ namespace WindowsFormsApp1
                         cmd.ExecuteNonQuery();
                         con.Close();
                         MessageBox.Show("Билеты куплены");
-                        this.Close();
+                        TicketMatch TM = new TicketMatch();
+                        TM.ShowDialog();
                     }
                     else
                         MessageBox.Show("Осталось " + (Convert.ToInt32(dt.Rows[0][0]) - Convert.ToInt32(dt.Rows[0][1])) + " билетов на матч");
-                else
-                    MessageBox.Show("Введите корректное число билетов");
-               
-
+                TicketMatch asasa = new TicketMatch();
+                asasa.Show();
+                this.Close();
             }
+            else
+                MessageBox.Show("Введите корректное число билетов");
+
+
         }
+
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -108,3 +113,4 @@ namespace WindowsFormsApp1
         }
     }
 }
+
