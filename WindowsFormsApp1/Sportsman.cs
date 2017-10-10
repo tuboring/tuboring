@@ -40,5 +40,14 @@ namespace WindowsFormsApp1
             MyResults form = new MyResults();
             form.ShowDialog();
         }
+
+        private void Выход_Click(object sender, EventArgs e)
+        {
+            Program.UserId = "";
+            Program.nameUser = "";
+            Authorization autorisation = new Authorization();
+            autorisation.Show();
+            this.Close();
+        }
     }
 }

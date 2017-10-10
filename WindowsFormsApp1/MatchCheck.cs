@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
 
         void loadCity()
         {
-            string query = "select * from [Marathon]";
+            string query = "select [Event].[CityName] from [Event] GROUP BY [Event].[CityName] ";
             con.Open();
             SqlDataAdapter da = new SqlDataAdapter(query, con);
             DataSet myDS = new DataSet();
@@ -41,7 +41,7 @@ namespace WindowsFormsApp1
             cityComboBox.Items.Clear();
             for (int i = 0; i < myDS.Tables["Marathon"].Rows.Count; i++)
             {
-                cityComboBox.Items.Add(myDS.Tables["Marathon"].Rows[i][2].ToString());
+                cityComboBox.Items.Add(myDS.Tables["Marathon"].Rows[i][0].ToString());
             }
             con.Close();
         }

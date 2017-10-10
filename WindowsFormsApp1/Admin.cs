@@ -34,5 +34,18 @@ namespace WindowsFormsApp1
             Tickets tickets = new Tickets();
             tickets.ShowDialog();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Выход_Click(object sender, EventArgs e)
+        {
+            Program.UserId = "";
+            Program.nameUser = "";
+            Application.Run(new Authorization());
+            this.Close();
+        }
     }
 }
