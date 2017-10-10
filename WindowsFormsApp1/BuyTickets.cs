@@ -93,7 +93,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            loadMatchs();
+             loadMatchs();
         }
 
         private void BuyTickets_Load(object sender, EventArgs e)
