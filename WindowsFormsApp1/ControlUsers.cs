@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             this.email = EmailUser;
             this.users = Users;
-            Ок.Text = "Редактировать";
+            Ок.Text = "+ Редактировать";
             loadRoleAndCountry();
             LoadInfoUser();
         }
@@ -137,6 +137,7 @@ namespace WindowsFormsApp1
             {
                 EditProfile();
                 users.UpdateForm();
+                MessageBox.Show("Информация пользователя успешно изменена");
                 this.Close();
             }
         }

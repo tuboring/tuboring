@@ -24,6 +24,11 @@ namespace WindowsFormsApp1
             ДатаРождения.Format = DateTimePickerFormat.Custom;
         }
 
+        public bool CheckTextIsMatch(string txt, string reg)
+        {
+            return Regex.IsMatch(txt, reg);
+        }
+
         public bool PasswordCheck(string pas1, string pas2)
         {
             return pas1 == pas2;
@@ -36,12 +41,12 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Не все поля заполнены. Повторите попытку.");
                 return;
             }
-            if (Regex.IsMatch(Почта.Text, @"\A[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\z") == false)
+            if (!CheckTextIsMatch(Почта.Text, @"\A[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\z"))
             {
                 MessageBox.Show("Не правильно введен адрес почты. Повторите попытку.");
                 return;
             }
-            if (Regex.IsMatch(Пароль.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,}") == false)
+            if (!CheckTextIsMatch(Пароль.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,}"))
             {
                 MessageBox.Show("Пароль должен содержать: /nМинимум 6 символов, /nМинимум 1 прописная буква, /nМинимум 1 цифра, /nПо крайней мере один из следующих символов: ! @ # $ % ^");
                 return;

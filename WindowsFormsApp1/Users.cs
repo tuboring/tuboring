@@ -39,27 +39,42 @@ namespace WindowsFormsApp1
         {
             loadMatchs();
         }
+        public string CheckSelect(string cb1, string cb2)
+        {
+            if (cb1 == "" && cb2 == "")
+                return "SELECT [User].Email As Почта, [User].Name As Имя, Country.CountryName as Страна, Role.RoleName As Роль From [User] left join Country on [User].CountryCode = Country.CountryCode left join Role on [User].RoleId = Role.RoleId";
+            else if (cb1 != "" && cb2 != "")
+                return "SELECT [User].Email As Почта, [User].Name As Имя, Country.CountryName as Страна, Role.RoleName As Роль From [User] left join Country on [User].CountryCode = Country.CountryCode left join Role on [User].RoleId = Role.RoleId where [Role].RoleName =  N'" + comboBox1.SelectedValue + "' AND  [Country].CountryName =  N'" + comboBox2.SelectedValue + "'";
+            else if (cb1 != "" && cb2 == "")
+                return "SELECT [User].Email As Почта, [User].Name As Имя, Country.CountryName as Страна, Role.RoleName As Роль From [User] left join Country on [User].CountryCode = Country.CountryCode left join Role on [User].RoleId = Role.RoleId where [Role].RoleName =  N'" + comboBox1.SelectedValue + "'";
+            else if (cb1 == "" && cb2 != "")
+                return "SELECT [User].Email As Почта, [User].Name As Имя, Country.CountryName as Страна, Role.RoleName As Роль From [User] left join Country on [User].CountryCode = Country.CountryCode left join Role on [User].RoleId = Role.RoleId where  [Country].CountryName =  N'" + comboBox2.SelectedValue + "'";
+            else return null;
+        }
         void loadMatchs()
         {
-  
-            string query = "";
-            if (comboBox1.Text == "" && comboBox2.Text == "")
-                query = "SELECT [User].Email As Почта, [User].Name As Имя, Country.CountryName as Страна, Role.RoleName As Роль From [User] left join Country on [User].CountryCode = Country.CountryCode left join Role on [User].RoleId = Role.RoleId";
-            else if (comboBox1.Text != "" && comboBox2.Text != "")
-                query = "SELECT [User].Email As Почта, [User].Name As Имя, Country.CountryName as Страна, Role.RoleName As Роль From [User] left join Country on [User].CountryCode = Country.CountryCode left join Role on [User].RoleId = Role.RoleId where [Role].RoleName =  N'" + comboBox1.SelectedValue + "' AND  [Country].CountryName =  N'" + comboBox2.SelectedValue + "'";
-            else if (comboBox1.Text != "" && comboBox2.Text  == "")
-                query = "SELECT [User].Email As Почта, [User].Name As Имя, Country.CountryName as Страна, Role.RoleName As Роль From [User] left join Country on [User].CountryCode = Country.CountryCode left join Role on [User].RoleId = Role.RoleId where [Role].RoleName =  N'" + comboBox1.SelectedValue + "'";
-            else if (comboBox1.Text == "" && comboBox2.Text != "")
-                query = "SELECT [User].Email As Почта, [User].Name As Имя, Country.CountryName as Страна, Role.RoleName As Роль From [User] left join Country on [User].CountryCode = Country.CountryCode left join Role on [User].RoleId = Role.RoleId where  [Country].CountryName =  N'" + comboBox2.SelectedValue + "'";
+            //string query = "";
+            //if (comboBox1.Text == "" && comboBox2.Text == "")
+            //    query = "SELECT [User].Email As Почта, [User].Name As Имя, Country.CountryName as Страна, Role.RoleName As Роль From [User] left join Country on [User].CountryCode = Country.CountryCode left join Role on [User].RoleId = Role.RoleId";
+            //else if (comboBox1.Text != "" && comboBox2.Text != "")
+            //    query = "SELECT [User].Email As Почта, [User].Name As Имя, Country.CountryName as Страна, Role.RoleName As Роль From [User] left join Country on [User].CountryCode = Country.CountryCode left join Role on [User].RoleId = Role.RoleId where [Role].RoleName =  N'" + comboBox1.SelectedValue + "' AND  [Country].CountryName =  N'" + comboBox2.SelectedValue + "'";
+            //else if (comboBox1.Text != "" && comboBox2.Text  == "")
+            //    query = "SELECT [User].Email As Почта, [User].Name As Имя, Country.CountryName as Страна, Role.RoleName As Роль From [User] left join Country on [User].CountryCode = Country.CountryCode left join Role on [User].RoleId = Role.RoleId where [Role].RoleName =  N'" + comboBox1.SelectedValue + "'";
+            //else if (comboBox1.Text == "" && comboBox2.Text != "")
+            //    query = "SELECT [User].Email As Почта, [User].Name As Имя, Country.CountryName as Страна, Role.RoleName As Роль From [User] left join Country on [User].CountryCode = Country.CountryCode left join Role on [User].RoleId = Role.RoleId where  [Country].CountryName =  N'" + comboBox2.SelectedValue + "'";
 
-            con.Open();
+            if (!(CheckSelect(comboBox1.Text, comboBox2.Text) is null))
+            {
+                string query = (CheckSelect(comboBox1.Text, comboBox2.Text) is null) ? null : CheckSelect(comboBox1.Text, comboBox2.Text);
+                con.Open();
 
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);            
-            dataGridView1.DataSource = dt;
-            con.Close();
-
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                con.Close();
+                if (dataGridView1.RowCount == 1) MessageBox.Show("Поиск не дал результатов");
+            }
         }
 
         public object CorrrectCheck(int v1, int v2)

@@ -50,21 +50,21 @@ namespace WindowsFormsApp1
         {
             string query = "";
 
-            if (cityComboBox.Text == "")
+            if (cityComboBox.Text == "" && checkBox1.Checked == true)
             {
                 query = "SELECT [EventName], [MarathonName], [StartDateTime], [Cost] FROM [Event] join [EventType] on [Event].[EventTypeId] = [EventType].[EventTypeId] join [Marathon] on [Event].[MarathonId] = [Marathon].[MarathonId] where convert(date,[StartDateTime]) = convert(date, '" + dateTimePicker1.Text + "')";
             }
-            else if(checkBox1.Checked==false)
+            else if(cityComboBox.Text != "" &&  checkBox1.Checked==false)
             {
                 query = "SELECT [EventName], [MarathonName], [StartDateTime], [Cost] FROM [Event] join [EventType] on [Event].[EventTypeId] = [EventType].[EventTypeId] join [Marathon] on [Event].[MarathonId] = [Marathon].[MarathonId] where [CityName]='" + cityComboBox.Text + "'";
             }
-            else if(cityComboBox.Text != ""&& checkBox1.Checked == true)
+            else if(cityComboBox.Text != "" && checkBox1.Checked == true)
             {
                 query = "SELECT [EventName], [MarathonName], [StartDateTime], [Cost] FROM [Event] join [EventType] on [Event].[EventTypeId] = [EventType].[EventTypeId] join [Marathon] on [Event].[MarathonId] = [Marathon].[MarathonId] where [CityName]='" + cityComboBox.Text + "' AND convert(date,[StartDateTime]) = convert(date, '" + dateTimePicker1.Text + "')";
             }
             else
             {
-                MessageBox.Show("Выберите параметр для проверки");
+                query = "SELECT [EventName], [MarathonName], [StartDateTime], [Cost] FROM [Event] join [EventType] on [Event].[EventTypeId] = [EventType].[EventTypeId] join [Marathon] on [Event].[MarathonId] = [Marathon].[MarathonId]";
             }
             con.Open();
 
