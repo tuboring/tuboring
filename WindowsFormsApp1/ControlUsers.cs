@@ -141,6 +141,12 @@ namespace WindowsFormsApp1
                 this.Close();
             }
         }
+
+        public bool CurrectCheck(double d1, double d2)
+        {
+            return d1 >= d2;
+        }
+
         public Image ResizeOrigImg(Image image)
         {
             int newWidth = 196, newHeight;
@@ -148,7 +154,7 @@ namespace WindowsFormsApp1
             var coefH = (double)175 / (double)image.Height;
             var coefW = (double)196 / (double)image.Width;
 
-            if (coefW >= coefH)
+            if (CurrectCheck(coefW, coefH))
             {
                 newHeight = (int)(image.Height * coefH);
                 newWidth = (int)(image.Width * coefH);
@@ -295,6 +301,11 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
+        //public bool CurrectCheck(DialogResult d)
+        //{
+        //    return d.
+        //}
 
         private void button6_Click(object sender, EventArgs e)
         {
