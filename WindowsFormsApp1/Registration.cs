@@ -24,6 +24,11 @@ namespace WindowsFormsApp1
             ДатаРождения.Format = DateTimePickerFormat.Custom;
         }
 
+        public bool PasswordCheck(string pas1, string pas2)
+        {
+            return pas1 == pas2;
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             if (ФИО.Text == "" || Статус.Text == "" || Почта.Text == "" || Пароль.Text == "" || ПовторитьПароль.Text == "" || Телефон.Text == "" || ДатаРождения.Text == "" || Страна.Text == "")
@@ -41,7 +46,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Пароль должен содержать: /nМинимум 6 символов, /nМинимум 1 прописная буква, /nМинимум 1 цифра, /nПо крайней мере один из следующих символов: ! @ # $ % ^");
                 return;
             }
-            if(Пароль.Text != ПовторитьПароль.Text)
+            if(!(PasswordCheck(Пароль.Text, ПовторитьПароль.Text)))
             {
                 MessageBox.Show("Пароли не совпадают. Повторите попытку");
                 return;
@@ -49,6 +54,11 @@ namespace WindowsFormsApp1
             LoadInfoRegistration();
             ConfirmRegistration fm = new ConfirmRegistration();
             fm.Show();
+        }
+
+        public object PasswordCheck()
+        {
+            throw new NotImplementedException();
         }
 
         public Image ResizeOrigImg(Image image)

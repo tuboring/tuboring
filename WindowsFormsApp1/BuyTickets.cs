@@ -40,9 +40,14 @@ namespace WindowsFormsApp1
 
         }
 
+        public bool CorrectSelect(int selinnd, decimal value)
+        {
+            return (selinnd != -1 && value != 0);
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
-            if (comboBox2.SelectedIndex != -1 && numericUpDown1.Value != 0)
+            if (CorrectSelect(comboBox2.SelectedIndex, numericUpDown1.Value))
             {
 
                 string query = "SELECT Event.MaxParticipants, ISNULL(SUM(TicketsSales.Amount),1) From Event Left join TicketsSales on Event.EventId = TicketsSales.EventId where Event.EventId =  '" + comboBox2.SelectedValue + "'" +
