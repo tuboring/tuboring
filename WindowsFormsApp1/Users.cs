@@ -62,6 +62,11 @@ namespace WindowsFormsApp1
 
         }
 
+        public object CorrrectCheck(int v1, int v2)
+        {
+            throw new NotImplementedException();
+        }
+
         private void fillToolStripButton_Click(object sender, EventArgs e)
         {
             try
@@ -75,6 +80,13 @@ namespace WindowsFormsApp1
 
         }
 
+        public DataGridViewRow dgtrue()
+        {
+            DataGridViewRow dt = new DataGridViewRow();
+
+            return dt;
+        }
+
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             ControlUsers cu = new ControlUsers(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), this);
@@ -86,9 +98,19 @@ namespace WindowsFormsApp1
             loadMatchs();
         }
 
+        public bool CorrrectCheck(DataGridViewRow dt, int index, int index2)
+        {
+            return dt != null && index < (index2 - 1);
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow != null && dataGridView1.CurrentRow.Index < dataGridView1.RowCount - 1)
+            //bool b;
+            //if (dataGridView1.CurrentRow != null)
+            //    b = true;
+            //else
+            //    b = false;
+            if (CorrrectCheck(dataGridView1.CurrentRow, dataGridView1.CurrentRow.Index , dataGridView1.RowCount))
             {
                 DialogResult dialogResult = MessageBox.Show("Вы уверены, что хотите удалить этого пользователя?", "Проверка", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
