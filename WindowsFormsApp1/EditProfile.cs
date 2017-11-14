@@ -148,6 +148,7 @@ namespace WindowsFormsApp1
             return result;
         }
 
+
         private void button3_Click(object sender, EventArgs e)
         {
             if (ФИО.Text == "" || Статус.Text == "" || Почта.Text == "" || Пароль.Text == "" || ПовторитьПароль.Text == "" || Телефон.Text == "" || ДатаРождения.Text == "" || Страна.Text == "")

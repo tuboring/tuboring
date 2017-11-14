@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
         private void button2_Click(object sender, EventArgs e)
         {
             string roleId = CheckLoginAndPassword(loginTextBox.Text, passwordTextBox.Text);
-            if (roleId=="")
+            if (roleId==null)
                 MessageBox.Show("Неправильный логин или пароль. Попробуйте заново.");
             else
             {
@@ -38,7 +38,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        string CheckLoginAndPassword(string login, string password)
+        public string CheckLoginAndPassword(string login, string password)
         {
             string query = "SELECT * FROM [User] where [Email]='" + loginTextBox.Text + "'";
             SqlCommand cmd = new SqlCommand(query, Program.con);
@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
                 con.Close();
                 return roleid;
             }
-            else return "";
+            else return null;
         }
 
         void OpenFormUser(string rName)

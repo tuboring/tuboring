@@ -144,7 +144,7 @@
     <Compile Include="Registration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registration.Designer.cs">
+    <Compile Include="Registration.designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
     <Compile Include="RegistrationOnMatch.cs">
@@ -180,7 +180,7 @@
     <Compile Include="Users.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Users.Designer.cs">
+    <Compile Include="Users.designer.cs">
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
     <Compile Include="Сoach.cs">
