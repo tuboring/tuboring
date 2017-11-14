@@ -2,6 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Tests
 {
@@ -59,26 +60,30 @@ namespace WindowsFormsApp1.Tests
         #endregion
 
         [TestMethod]
-        public void TestMethod1Lesha()
+        public void TestMethodSasha()
         {
 
-            Registration form = new Registration();
+            Users form = new Users();
 
-            var falseCheck = form.PasswordCheck("yasfc", "sa");
-            var trueCheck = form.PasswordCheck("admin", "admin");
+            DataGridViewRow dt = new DataGridViewRow();
+
+            var trueCheck = form.CorrrectCheck(dt, 0,3);
+            var falseCheck = form.CorrrectCheck(null, 3,2);
 
             Assert.IsTrue(trueCheck);
             Assert.IsFalse(falseCheck);
         }
 
+
         [TestMethod]
-        public void TestMethod2Lesha()
+        public void TestMethodSasha1()
         {
 
-            BuyTickets form = new BuyTickets();
+            ControlUsers form = new ControlUsers();
 
-            var falseCheck = form.CorrectSelect(-1, 0);
-            var trueCheck = form.CorrectSelect(2, 3);
+
+            var trueCheck = form.CurrectCheck(3, 2);
+            var falseCheck = form.CurrectCheck(0, 1);
 
             Assert.IsTrue(trueCheck);
             Assert.IsFalse(falseCheck);
