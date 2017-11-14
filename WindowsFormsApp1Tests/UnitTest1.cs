@@ -91,5 +91,32 @@ namespace WindowsFormsApp1Tests
             Assert.IsNotNull(trueResPassword);
             Assert.IsNull(falseResPassword);
         }
+
+        [TestMethod]
+        public void TestMethod1Lesha()
+        {
+
+            Registration form = new Registration();
+
+            var falseCheck = form.PasswordCheck("yasfc", "sa");
+            var trueCheck = form.PasswordCheck("admin", "admin");
+
+            Assert.IsTrue(trueCheck);
+            Assert.IsFalse(falseCheck);
+        }
+
+        [TestMethod]
+        public void TestMethod2Lesha()
+        {
+
+            BuyTickets form = new BuyTickets();
+
+            var falseCheck = form.CorrectSelect(-1, 0);
+            var trueCheck = form.CorrectSelect(2, 3);
+
+            Assert.IsTrue(trueCheck);
+            Assert.IsFalse(falseCheck);
+        }
+
     }
 }
